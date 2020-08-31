@@ -31,3 +31,23 @@
       name: ntpd
       state: started
       enabled: yes
+
+  - name: Adding Group to become owner group of unisys folder
+    group: 
+      name: unisys
+      state: present
+
+  - name: creating user with the unisys to become owner for unisys folder to to be created in next task
+    user: 
+      name: unisys
+      state: present
+      group: unisys
+      home: /unisys
+
+  - name: Creating folder using file module
+    file: 
+      path: /tmp/demo/unisys
+      owner: unisys
+      group: unisys
+      mode: '0755'
+      state: directory
