@@ -1,0 +1,27 @@
+- name: This is my First Playbook
+  hosts: all
+  become: yes
+  become_user: root
+  
+  tasks: 
+  - name: Create a User
+    user: 
+      name: thinknyx
+      state: present
+
+  - name: Installing one package
+    package: 
+      name: java
+      state: absent
+
+  - name: Installing Multiple Packages wiht one tasks
+    package: 
+      name: 
+      - git
+      - ntp
+      state: present
+ 
+  - name: Installing JDK
+    package: 
+      name: java-1.8.0-openjdk-devel
+      state: present
