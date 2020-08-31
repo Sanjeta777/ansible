@@ -2,6 +2,12 @@
   hosts: all
   become: yes
   become_user: root
+
+  handlers: 
+  - name: restart-ntp
+    service: 
+      name: ntpd
+      state: restarted
   
   tasks: 
   - name: Copy file or configuration files from master to managed nodes
