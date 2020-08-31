@@ -7,7 +7,7 @@
   - name: restart-ntp
     service: 
       name: ntpd
-      state: restarted
+      state: stopped
   
   tasks: 
   - name: Copy file or configuration files from master to managed nodes
