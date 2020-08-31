@@ -14,6 +14,8 @@
     copy: 
       src: ntp.conf
       dest: /etc/ntp.conf
+    notify: 
+    - restart-ntp
  
   - name: Create a User
     user: 
