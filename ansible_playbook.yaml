@@ -52,6 +52,14 @@
       mode: '0755'
       state: directory
 
+  - name: creating and empty file using file module
+    file:
+      path: /tmp/demo/unisys/monday
+      owner: root
+      group: unisys
+      mode: '0755'
+      state: touch
+
   - name: Checking if file exist on the path using file module
     file:
       path: /tmp/demo/unisys/monday
