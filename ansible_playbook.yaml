@@ -4,6 +4,11 @@
   become_user: root
   
   tasks: 
+  - name: Copy file or configuration files from master to managed nodes
+    copy: 
+      src: ntp.conf
+      dest: /etc/ntp.conf
+ 
   - name: Create a User
     user: 
       name: thinknyx
