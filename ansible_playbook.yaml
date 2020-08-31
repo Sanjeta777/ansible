@@ -12,7 +12,7 @@
   - name: Installing one package
     package: 
       name: java
-      state: absent
+      state: present
 
   - name: Installing Multiple Packages wiht one tasks
     package: 
@@ -25,3 +25,9 @@
     package: 
       name: java-1.8.0-openjdk-devel
       state: present
+
+  - name: Starting and enabling a Service
+    service: 
+      name: ntpd
+      state: started
+      enabled: yes
