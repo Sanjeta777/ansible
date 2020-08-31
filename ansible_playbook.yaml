@@ -51,3 +51,11 @@
       group: unisys
       mode: '0755'
       state: directory
+
+  - name: Checking if file exist on the path using file module
+    file:
+      path: /tmp/demo/unisys/monday
+      owner: root
+      group: unisys
+      mode: '0755'
+      state: file
